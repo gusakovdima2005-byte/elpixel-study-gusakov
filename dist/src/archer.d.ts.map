@@ -1,0 +1,1 @@
+{"version":3,"file":"archer.d.ts","sourceRoot":"","sources":["../../src/archer.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,IAAI,EAAE,MAAM,WAAW,CAAC;AAEjC,qBAAa,MAAO,SAAQ,IAAI;IAC9B,OAAO,CAAC,WAAW,CAAS;gBAEhB,IAAI,EAAE,MAAM,EAAE,UAAU,EAAE,MAAM;IAKrC,KAAK,IAAI,IAAI;IAWb,aAAa,CAAC,MAAM,EAAE,MAAM,GAAG,IAAI;CAM3C"}

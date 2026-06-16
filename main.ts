@@ -1,0 +1,33 @@
+import { Warrior } from "./src/warrior.js";
+import { Mage } from "./src/mage.js";
+import { Archer } from "./src/archer.js";
+
+const axe = new Warrior("акс", 20);
+const invoker = new Mage("инвокер", 100);
+const drowRanger = new Archer("дровка", 5);
+console.groupEnd();
+
+console.group("АКС");
+axe.takeDamage(90);
+axe.heal(10);
+axe.levelUp();
+console.groupEnd();
+
+console.group("ДРОВКА");
+drowRanger.shoot();
+drowRanger.levelUp();
+drowRanger.restockArrows(4);
+console.groupEnd();
+
+console.group("ИНВОКЕР");
+invoker.castSpell(60, "санстрайк");
+invoker.castSpell(100, "метеор");
+invoker.levelUp();
+invoker.castSpell(20, "алакрити");
+invoker.castSpell(50, "метеор");
+console.groupEnd();
+
+console.group("ОШИБКИ");
+axe.name = "";
+invoker.health = 300;
+console.groupEnd();

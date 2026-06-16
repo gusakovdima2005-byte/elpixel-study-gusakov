@@ -1,11 +1,11 @@
 {
+  "type": "module",
   "devDependencies": {
     "@types/node": "^25.9.3",
     "typescript": "^6.0.3"
   },
   "scripts": {
-  "build": "tsc",
-  "watch": "tsc --watch"
-}
-
+    "build": "tsc",
+    "watch": "tsc --watch"
+  }
 }

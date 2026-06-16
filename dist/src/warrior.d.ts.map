@@ -1,0 +1,1 @@
+{"version":3,"file":"warrior.d.ts","sourceRoot":"","sources":["../../src/warrior.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,IAAI,EAAE,MAAM,WAAW,CAAC;AAEjC,qBAAa,OAAQ,SAAQ,IAAI;IAC/B,OAAO,CAAC,MAAM,CAAS;gBAEX,IAAI,EAAE,MAAM,EAAE,KAAK,EAAE,MAAM;IAKvB,UAAU,CAAC,MAAM,EAAE,MAAM,GAAG,IAAI;CAYjD"}

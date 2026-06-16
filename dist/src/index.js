@@ -1,6 +1,4 @@
-"use strict";
 // Тема 6: Массивы
-Object.defineProperty(exports, "__esModule", { value: true });
 // 1. С помощью первого способа укажите тип данных в следующем массиве: let arr = [1, 2, 3, 4, 5];
 // let arr : number[] = [1, 2, 3, 4, 5];
 // 2. С помощью второго способа укажите тип данных в следующем массиве:
@@ -271,4 +269,5 @@ let func55_2 = (str) => str.split("");
 // 3. Перепишите следующий JavaScript код на TypeScript вариант:
 let arr55 = [1, 2, 3];
 let res55 = arr55.map((num) => num ** 2);
+export {};
 //# sourceMappingURL=index.js.map
