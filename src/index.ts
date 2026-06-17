@@ -356,17 +356,17 @@ interface Employee {
   addr: Address;
 }
 
-let employee: Employee = {
-  name: "andrew",
-  potision: {
-    name: "programmer",
-    salary: 1000,
-  },
-  addr: {
-    country: "belarus",
-    city: "minsk",
-  },
-};
+// let employee: Employee = {
+//   name: "andrew",
+//   potision: {
+//     name: "programmer",
+//     salary: 1000,
+//   },
+//   addr: {
+//     country: "belarus",
+//     city: "minsk",
+//   },
+// };
 
 // 2. Сделайте интерфейс, описывающий структуру этого объекта.
 //    Вынесите вложенные объекты в отдельные интерфейсы.
@@ -533,3 +533,611 @@ let func55_2 = (str: string): string[] => str.split("");
 
 let arr55: number[] = [1, 2, 3];
 let res55: number[] = arr55.map((num: number): number => num ** 2);
+
+// ООП
+
+// Классы ООП
+
+// 1. Объявите класс Employee.
+
+// class Employee {}
+
+// Создание объектов ООП классов
+
+// 1. Создайте два объекта класса Employee.
+
+// let employee1 = new Employee();
+
+// let employee2: Employee = new Employee();
+
+// Свойства ООП класса
+
+// 1. Создайте класс Student со свойствами name и age.
+
+// class Student {
+//   name: string = "Dmitriy";
+//   age: number = 20;
+// }
+
+// Методы классов в ООП
+
+// 1. Создайте класс Student со свойствами name и age. Добавьте методы для получения и изменения этих свойств.
+
+// class Student {
+//   name: string = "Dmitriy";
+//   age: number = 20;
+
+//   getName(): string {
+//     return this.name;
+//   }
+//   setName(value: string): void {
+//     this.name = value;
+//   }
+
+//   getAge(): number {
+//     return this.age;
+//   }
+//   setAge(value: number): void {
+//     this.age = value;
+//   }
+// }
+
+// Конструктор класса в ООП
+
+// 1. Создайте класс Employee, в конструктор которого передайте имя, фамилию, возраст и зарплату работника.
+
+// class Employee {
+//   firstName: string;
+//   lastName: string;
+//   age: number;
+//   salary: number;
+
+//   constructor(
+//     firstName: string,
+//     lastName: string,
+//     age: number,
+//     salary: number,
+//   ) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.age = age;
+//     this.salary = salary;
+//   }
+// }
+
+// Наследование ООП классов
+
+// 1. Создайте класс Employee, который наследует от класса User.
+
+// class User {
+//   name: string;
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+// }
+
+// class Employee extends User {
+//   salary: number;
+
+//   constructor(name: string, salary: number) {
+//     super(name);
+//     this.salary = salary;
+//   }
+// }
+
+// Модификатор public
+
+// 1. Сделайте класс User, который будет содержать публичные свойства с именем и годом рождения пользователя.
+//    Сделайте публичный метод getAge, который будет получать возраст пользователя по году его рождения.
+
+class User2 {
+  public name: string = "Дима";
+  public yearOfBirthday: number = 2005;
+
+  public getAge(): number {
+    const currentYear = new Date().getFullYear();
+    return currentYear - this.yearOfBirthday;
+  }
+}
+
+// Модификатор private
+
+// 1. Сделайте класс User, содержащий приватные свойства с именем и возрастом. Пусть их начальные значения задаются через конструктор.
+// 2. В вашем классе User сделайте публичные методы getName и getAge, позволяющие получить значения соответствующих приватных свойств.
+// 3. В вашем классе User сделайте публичные методы setName и setAge, позволяющие изменить значения соответствующих приватных свойств.
+class User10 {
+  private name: string;
+  private age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  public getName(): string {
+    return this.name;
+  }
+  public setName(value: string): void {
+    this.name = value;
+  }
+  public getAge(): number {
+    return this.age;
+  }
+
+  public setAge(value: number): void {
+    this.age = value;
+  }
+}
+
+// Модификатор protected
+
+// 1. Дан следующий класс:
+
+class User11 {
+  protected name: string;
+  protected surn: string;
+
+  constructor(name: string, surn: string) {
+    this.name = name;
+    this.surn = surn;
+  }
+}
+// Унаследуйте от этого класса класс Employee, который добавит защищенное свойство salary, а также геттеры всех свойств, как своих, так и унаследованных.
+
+class Employee11 extends User11 {
+  protected salary: number;
+
+  constructor(name: string, surn: string, salary: number) {
+    super(name, surn);
+    this.salary = salary;
+  }
+
+  public getName(): string {
+    return this.name;
+  }
+  public setName(value: string): void {
+    this.name = value;
+  }
+
+  public getSurn(): string {
+    return this.surn;
+  }
+  public setSurn(value: string): void {
+    this.surn = value;
+  }
+  public getSalary(): number {
+    return this.salary;
+  }
+  public setSalary(value: number): void {
+    this.salary = value;
+  }
+}
+
+// Модификатор readonly
+
+// 1. Задайте классу User свойство age, доступное только для чтения. Создайте объект данного класса и выведите его возраст на экран.
+
+class User12 {
+  readonly age: number;
+  constructor(age: number) {
+    this.age = age;
+  }
+}
+
+const user12: User12 = new User12(20);
+console.log(user12.age);
+
+// Аксессоры в ООП
+
+// 1. Сделайте класс User, содержащий приватные свойства с именем и возрастом. Сделайте аксессоры этих свойств.
+// 2. Модифицируйте сеттер возраста так, чтобы можно было задать возраст от 0 до 120. Если же будет указано иное значение, должно выбрасываться исключение.
+class User13 {
+  private _name: string;
+  private _age: number;
+
+  constructor(name: string, age: number) {
+    this._name = name;
+    this._age = age;
+  }
+
+  public get name(): string {
+    return this._name;
+  }
+
+  public set name(name: string) {
+    this._name = name;
+  }
+
+  public get age(): number {
+    return this._age;
+  }
+
+  public set age(age: number) {
+    if (!(age >= 0 && age <= 120)) {
+      console.error("Возраст от 0 до 120");
+    } else {
+      this._age = age;
+    }
+  }
+}
+
+// Статические свойства
+
+// 1. В класс Student добавьте статическое свойство specialty. Выведите данное свойство без объявления объекта.
+// 2. В класс Student добавьте статическое свойство university. Выведите данное свойство без объявления объекта.
+class Student14 {
+  public static speciality: string = "ПРО-31";
+  public static university: string = "ГГУ";
+}
+
+console.log(Student14.speciality);
+console.log(Student14.university);
+
+// 3. В класс Calc добавьте методы, которые будут находить сумму квадратов и сумму кубов элементов массивов.
+class Calc {
+  public static getSum(arr: number[]): number {
+    let sum: number = 0;
+
+    for (let elem of arr) {
+      sum += elem;
+    }
+
+    return sum;
+  }
+
+  public static getSumOfSquares(arr: number[]): number {
+    let sum: number = 0;
+
+    for (let elem of arr) {
+      sum += elem ** 2;
+    }
+
+    return sum;
+  }
+
+  public static getSumOfCubes(arr: number[]): number {
+    let sum: number = 0;
+
+    for (let elem of arr) {
+      sum += elem ** 3;
+    }
+
+    return sum;
+  }
+}
+
+//  Абстрактные ООП классы
+
+// 1. Создайте абстрактный класс Figure, представляющий собой геометрическую фигуру. Пусть в нем будут свойства для периметра и площади.
+// 2. Сделайте класс Square, наследующий от класса Figure.
+// 3. Сделайте класс Rectangle, наследующий от класса Figure
+// abstract class Figure {
+//   private _perimetr: number;
+//   private _square: number;
+
+//   constructor(perimetr: number, square: number) {
+//     this._perimetr = perimetr;
+//     this._square = square;
+//   }
+// }
+
+// class Square extends Figure {}
+
+// class Rectangle extends Figure {}
+
+// Абстрактные методы в ООП
+// 1. В абстрактном классе Figure сделайте абстрактные методы для получения площади и периметра.
+// 2. В классах-потомках Square и Rectangle напишите реализацию этих методов.
+
+abstract class Figure {
+  abstract getSquare(): number;
+  abstract getPerimetr(): number;
+}
+
+class Square extends Figure {
+  private side: number;
+
+  constructor(side: number) {
+    super();
+    this.side = side;
+  }
+
+  public getSquare(): number {
+    return this.side ** 2;
+  }
+
+  public getPerimetr(): number {
+    return this.side * 4;
+  }
+}
+
+class Rectangle extends Figure {
+  private width: number;
+  private height: number;
+
+  constructor(width: number, height: number) {
+    super();
+    this.width = width;
+    this.height = height;
+  }
+
+  public getSquare(): number {
+    return this.width * this.height;
+  }
+
+  public getPerimetr(): number {
+    return 2 * (this.width + this.height);
+  }
+}
+
+// Свойства интерфейсов
+
+// 1. Создайте интерфейс IMath со свойствами num1 и num2.
+
+interface IMath {
+  num1: number;
+  num2: number;
+}
+// 2. Реализуйте объект calc созданного выше интерфейса.
+
+const calc: IMath = {
+  num1: 10,
+  num2: 15,
+};
+
+// Методы интерфейсов
+
+// 1. Для интерфейса IUser, реализуйте метод для проверки возраста. Если возраст юзера меньше 18, пусть отобразится сообщение о том, что доступ запрещен.
+interface IUser {
+  name: string;
+  age: number;
+
+  greet(text: string): string;
+  checkAge(age: number): string;
+}
+
+let user21: IUser = {
+  name: "john",
+  age: 30,
+
+  greet(text: string): string {
+    return text + ", " + this.name;
+  },
+  checkAge(age: number): string {
+    if (age < 18) {
+      return "Доступ запрещен";
+    } else {
+      return "Доступ разрешен";
+    }
+  },
+};
+
+// 2. Создайте интерфейс IMath со свойствами num1 и num2, а также методом getSum, который будет суммировать оба числа.
+interface IMath21 {
+  num1: number;
+  num2: number;
+
+  getSum(): number;
+}
+
+const calc21: IMath21 = {
+  num1: 10,
+  num2: 15,
+  getSum(): number {
+    return this.num1 + this.num2;
+  },
+};
+
+console.log(calc21.getSum());
+
+// Опциональные свойства интерфейса
+
+// 1. Сделайте интерфейс IDate для объекта, хранящего дату: год, месяц и день. Пусть все свойства объекта будут необязательными.
+
+interface IDate {
+  year?: number;
+  month?: string;
+  day?: number;
+}
+
+let date22: IDate = {};
+
+// Свойства только для чтения в интерфейсе
+
+// 1. Создайте интерфейс IUser, в котором свойство salary будет доступным только для чтения.
+
+interface IUser23 {
+  name: string;
+  readonly salary: number;
+}
+
+let user23: IUser23 = {
+  name: "Дима",
+  salary: 100,
+};
+
+// Интерфейс для функции
+
+// 1. Создайте интерфейс для функции, параметром принимающей две строки и возвращающей эти строки, сложенные через пробел.
+
+interface IConcat {
+  (str1: string, str2: string): string;
+}
+
+const concat: IConcat = (str1, str2) => `${str1} ${str2}`;
+console.log(concat("Привет", "мир"));
+
+// 2. Создайте интерфейс для функции, параметром принимающей число и возвращающей массив делителей этого числа.
+
+interface IGetDivisors {
+  (num: number): number[];
+}
+
+const getDivisors: IGetDivisors = (num) => {
+  const divisors: number[] = [];
+
+  for (let i = 1; i <= num; i++) {
+    if (num % i === 0) {
+      divisors.push(i);
+    }
+  }
+
+  return divisors;
+};
+console.log(getDivisors(12));
+
+// 3. Создайте интерфейс для функции, параметром принимающей строку и возвращающей массив слов из этой строки.
+
+interface IGetWords {
+  (str: string): string[];
+}
+
+const getWords: IGetWords = (str) => str.split(" ");
+console.log(getWords("Hello world from TypeScript"));
+
+// Индексируемый тип для массивов
+
+// 1. Создайте интерфейс, описывающий массив со значениями в виде чисел.
+
+interface INumberArray {
+  [index: number]: number;
+}
+
+const numsArray: INumberArray = [1, 2, 3, 4, 5];
+console.log(numsArray);
+
+// Индексируемый тип для объектов
+
+// 1. Создайте интерфейс, описывающий объект с ключами в виде чисел, а значениями в виде строк.
+
+interface IStringDict {
+  [key: number]: string;
+}
+
+const dict: IStringDict = {
+  0: "ноль",
+  1: "один",
+  2: "два",
+};
+console.log(dict);
+
+// Интерфейсы для ООП классов
+
+// 1. Создайте интерфейс IMath со свойствами num1 и num2 и методом getDiv, который будет делить первое число на второе.
+
+interface IMathClass {
+  num1: number;
+  num2: number;
+  getDiv(): number;
+}
+
+// 2.Сделайте класс Math, который реализует интерфейс IMath.
+
+class MathClass implements IMathClass {
+  public num1: number;
+  public num2: number;
+
+  constructor(num1: number, num2: number) {
+    this.num1 = num1;
+    this.num2 = num2;
+  }
+
+  public getDiv(): number {
+    return this.num1 / this.num2;
+  }
+}
+
+const mathObj = new MathClass(10, 2);
+console.log(mathObj.getDiv());
+
+// Расширение интерфейсов в ООП
+
+// 1. Создайте интерфейс IProgrammer со свойствами salary и language. Пусть данный интерфейс наследует IUser со свойствами name, birthday.
+
+interface IUserExt {
+  name: string;
+  birthday: string;
+}
+
+interface IProgrammer extends IUserExt {
+  salary: number;
+  language: string;
+}
+
+// 2. Сделайте класс Employee, который реализует IProgrammer.
+
+class EmployeeExt implements IProgrammer {
+  public name: string;
+  public birthday: string;
+  public salary: number;
+  public language: string;
+
+  constructor(
+    name: string,
+    birthday: string,
+    salary: number,
+    language: string,
+  ) {
+    this.name = name;
+    this.birthday = birthday;
+    this.salary = salary;
+    this.language = language;
+  }
+}
+
+const emp: EmployeeExt = new EmployeeExt(
+  "Дима",
+  "2005-11-10",
+  3000,
+  "TypeScript",
+);
+console.log(emp);
+
+// Типовые переменные
+
+// 1. Сделайте функцию, которая параметром принимает или два числа, или две строки. Своим результатом функция должна возвращать сумму параметров.
+
+function getSumParams<T extends number | string>(val1: T, val2: T): T {
+  if (typeof val1 === "number" && typeof val2 === "number") {
+    return (val1 + val2) as unknown as T;
+  }
+  if (typeof val1 === "string" && typeof val2 === "string") {
+    return (val1 + val2) as unknown as T;
+  }
+  throw new Error("Неподдерживаемый тип");
+}
+
+// Обобщенные типовые переменные
+
+// 1. Напишите функцию для перебора и вывода всех элементов массива обобщенного типа в консоль.
+
+function printAllElements<T>(arr: T[]): void {
+  for (let elem of arr) {
+    console.log(elem);
+  }
+}
+
+printAllElements([1, 2, 3, 4, 5]);
+printAllElements(["a", "b", "c"]);
+
+// Функцию обобщенного типа
+
+// 1. Напишите функцию для определения длины массива обобщенного типа в вариантах, описанных в данном уроке.
+
+function getLength<T>(arr: T[]): number {
+  return arr.length;
+}
+
+let func1: <T>(arr: T[]) => number = getLength;
+
+let func2: <U>(arr: U[]) => number = getLength;
+
+let func3: { <U>(arr: U[]): number } = getLength;
+
+// Ограничения обобщений
+
+// 1 . На основе примера, рассмотренного в уроке, задайте функцию для нахождения длины числового массива.
+
+function logArrayLength<T extends { nums: number[] }>(data: T): void {
+  console.log(data.nums.length);
+}
